@@ -23,7 +23,9 @@
 		AFB45D01261272B100B4006D /* HKSampleQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45D00261272B100B4006D /* HKSampleQuery.swift */; };
 		AFB45D06261273F900B4006D /* HKSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45D05261273F900B4006D /* HKSynchronizer.swift */; };
 		AFB45D0D261274AD00B4006D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB45D0C261274AD00B4006D /* HealthKit.framework */; };
-		AFB45D122612788E00B4006D /* EcgObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45D112612788E00B4006D /* EcgObservation.swift */; };
+		AFB45D122612788E00B4006D /* EcgObservationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45D112612788E00B4006D /* EcgObservationFactory.swift */; };
+		AFE09A872619EF40005459DD /* EcgObservationTemplateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE09A862619EF40005459DD /* EcgObservationTemplateProvider.swift */; };
+		AFE09A922619F941005459DD /* FhirTemplates.json in Resources */ = {isa = PBXBuildFile; fileRef = AFE09A912619F941005459DD /* FhirTemplates.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,9 @@
 		AFB45D05261273F900B4006D /* HKSynchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKSynchronizer.swift; sourceTree = "<group>"; };
 		AFB45D0A261274AD00B4006D /* Einthoven.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Einthoven.entitlements; sourceTree = "<group>"; };
 		AFB45D0C261274AD00B4006D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		AFB45D112612788E00B4006D /* EcgObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgObservation.swift; sourceTree = "<group>"; };
+		AFB45D112612788E00B4006D /* EcgObservationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgObservationFactory.swift; sourceTree = "<group>"; };
+		AFE09A862619EF40005459DD /* EcgObservationTemplateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcgObservationTemplateProvider.swift; sourceTree = "<group>"; };
+		AFE09A912619F941005459DD /* FhirTemplates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FhirTemplates.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				AFB45CA926126B8100B4006D /* Assets.xcassets */,
 				AFB45CAE26126B8100B4006D /* Info.plist */,
 				AFB45CAB26126B8100B4006D /* Preview Content */,
+				AFE09A912619F941005459DD /* FhirTemplates.json */,
 			);
 			path = Einthoven;
 			sourceTree = "<group>";
@@ -163,7 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				AFB45CE526126DC700B4006D /* TransactionBundle.swift */,
-				AFB45D112612788E00B4006D /* EcgObservation.swift */,
+				AFB45D112612788E00B4006D /* EcgObservationFactory.swift */,
+				AFE09A862619EF40005459DD /* EcgObservationTemplateProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 			files = (
 				AFB45CAD26126B8100B4006D /* Preview Assets.xcassets in Resources */,
 				AFB45CAA26126B8100B4006D /* Assets.xcassets in Resources */,
+				AFE09A922619F941005459DD /* FhirTemplates.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE09A872619EF40005459DD /* EcgObservationTemplateProvider.swift in Sources */,
 				AFB45D06261273F900B4006D /* HKSynchronizer.swift in Sources */,
 				AFB45CE626126DC700B4006D /* TransactionBundle.swift in Sources */,
 				AFB45CA826126B7E00B4006D /* ContentView.swift in Sources */,
@@ -342,7 +350,7 @@
 				AFB45CA626126B7E00B4006D /* EinthovenApp.swift in Sources */,
 				AFB45CE126126CB300B4006D /* UserDefaultsProvider.swift in Sources */,
 				AFB45CFC2612724500B4006D /* HKSampleProcessor.swift in Sources */,
-				AFB45D122612788E00B4006D /* EcgObservation.swift in Sources */,
+				AFB45D122612788E00B4006D /* EcgObservationFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

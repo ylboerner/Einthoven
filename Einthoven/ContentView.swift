@@ -37,7 +37,8 @@ struct ContentView: View {
             Button(action: {
                 HKAuthorizer.authorizeHealthKit(completion: { (success, error) in
                     let ecgType = HKObjectType.electrocardiogramType()
-                    let anchor = HKAnchorProvider.GetAnchor(forType: ecgType)
+                    //let anchor = HKAnchorProvider.GetAnchor(forType: ecgType)
+                    let anchor = HKQueryAnchor.init(fromValue: 0)
                    
                     HKSynchronizer().Synchronize(type: ecgType, predicate: nil, anchor: anchor, limit: HKObjectQueryNoLimit) { (success) in
                         print(success)
@@ -45,7 +46,7 @@ struct ContentView: View {
                 })
                 
             }) {
-                Text("Query HealthKit with anchor")
+                Text("Transmit ECG observations")
             }.foregroundColor(.white)
             .padding()
             .background(Color.accentColor)

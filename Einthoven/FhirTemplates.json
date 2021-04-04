@@ -1,0 +1,89 @@
+{
+    "ObservationTemplate": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "https://www.hl7.org/fhir/procedure.html",
+                        "code": "procedure",
+                        "display": "Procedure"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "urn:oid:2.16.840.1.113883.6.24",
+                    "code": "131328",
+                    "display": "MDC_ECG_ELEC_POTL"
+                }
+            ]
+        },
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.6.24",
+                            "code": "131329",
+                            "display": "MDC_ECG_ELEC_POTL_I"
+                        }
+                    ]
+                },
+                "valueSampledData": {
+                    "period": 1.953125,
+                    "dimensions": 1,
+                    "origin": {
+                        "value": 0
+                    },
+                    "data": "data"
+                }
+            }
+        ]
+    },
+    "SymptomTemplate": {
+        "code": {
+          "coding": [
+            {
+              "system": "https://loinc.org",
+              "code": "75325-1",
+              "display": "Symptom"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+            "coding": [
+                {
+                    "system": "https://www.hl7.org/fhir/codesystem-data-absent-reason.html",
+                    "code": "asked-declined",
+                    "display": "Asked But Declined"
+                }
+            ],
+            "text": "The source was asked but declined to answer."
+        }
+    },
+    "ClassificationTemplate": {
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271921002",
+              "display": "Electrocardiogram finding"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "",
+                    "display": ""
+                }
+            ],
+            "text": "classification"
+        }
+    }
+}

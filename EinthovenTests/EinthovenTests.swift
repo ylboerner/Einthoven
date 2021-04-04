@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import Einthoven
 
 class EinthovenTests: XCTestCase {
 

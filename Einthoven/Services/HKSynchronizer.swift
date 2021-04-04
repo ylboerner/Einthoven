@@ -30,10 +30,10 @@ class HKSynchronizer {
     
     // TODO refactor
     func GetFhirClient() -> FhirClient {
-        let serverAddress = UserDefaultsProvider.getValueFromUserDefaults(key: "serverAddress")
+        let serverAddress = UserDefaultsProvider.getValueFromUserDefaults(key: "serverAddress") ?? "Please provide a server address"
         let smartConnection = Client(
                 // Change this URL in order to send data to another server
-            baseURL: URL(string: serverAddress!)!,
+            baseURL: URL(string: serverAddress)!,
                 settings: [
                     //"client_id": "ECG Workflow app BIH",       // if you have one
                     "redirect": "smartapp://callback",    // must be registered

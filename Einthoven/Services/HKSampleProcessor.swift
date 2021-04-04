@@ -23,11 +23,8 @@ class HKSampleProcessor {
         var resources = [Resource]()
         for sample in samples {
             
-            
-            let observation = Observation()
-            if (observation != nil) {
-                resources.append(observation)
-            }
+            let observation = EcgObservationTemplateProvider().GetEcgObservationTemplate()
+            resources.append(observation)
             
             if (resources.count == 500) {
                 SendResources(resources: resources)
