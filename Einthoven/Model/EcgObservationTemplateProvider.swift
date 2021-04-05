@@ -8,22 +8,34 @@
 import Foundation
 import FHIR
 
-struct EcgObservationTemplateProvider {
-    func GetEcgObservationTemplate() -> Observation {
+class EcgObservationTemplateProvider {
+    
+    static private var observationTemplate = GetEcgObservationTemplate()!
+    
+    static private func GetEcgObservationTemplate() -> FHIRJSON? {
         if let path = Bundle.main.path(forResource: "FhirTemplates", ofType: "json") {
             do {
                   let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                   let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                   if let jsonResult = jsonResult as? FHIRJSON, let observationTemplate = jsonResult["ObservationTemplate"] as? FHIRJSON {
                     //let observationTemplateAsJson = observationTemplate as? FHIRJSON
-                    let observation = try Observation(json: observationTemplate)
-                    return observation
+                    return observationTemplate
                   }
               } catch {
                    print(error)
               }
         }
-        return Observation()
+        return nil
+    }
+    
+    static func GetObservationTemplate() -> Observation {
+        do {
+            let observation = try Observation(json: self.observationTemplate)
+            return observation
+
+        } catch {
+            print(error)
+            return Observation()
+        }
     }
 }
-

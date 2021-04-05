@@ -1,18 +1,24 @@
 //
-//  EcgObservation.swift
+//  HKEcgVoltageProvider.swift
 //  Einthoven
 //
-//  Created by Yannick Börner on 29.03.21.
+//  Created by Yannick Börner on 05.04.21.
 //
 
 import Foundation
 import FHIR
 import HealthKit
 
-class EcgObservationFactory {
+// String extension for double values
+extension LosslessStringConvertible {
+    var string: String { .init(self) }
+}
+
+class HKEcgVoltageProvider {
     
-    func CreateECGObservationFromSample(sample: HKElectrocardiogram) -> Observation {
-        var observation = EcgObservationTemplateProvider().GetEcgObservationTemplate()
+    func GetMeasurementsForHKElectrocardiogram(sample: HKElectrocardiogram, completionHandler: @escaping (String) -> Void) {
+        let healthStore = HKHealthStore()
+        var measurements = ""
         
         // Create a query for the voltage measurements
         let voltageQuery = HKElectrocardiogramQuery(sample) { (query, result) in
@@ -20,14 +26,12 @@ class EcgObservationFactory {
             
             case .measurement(let measurement):
                 if let voltageQuantity = measurement.quantity(for: .appleWatchSimilarToLeadI) {
-                    
-                    // Do something with the voltage quantity here.
-
+                    measurements = measurements + voltageQuantity.doubleValue(for: HKUnit.volt()).string + " "
                 }
             
             case .done:
-                print("Done")
                 // No more voltage measurements. Finish processing the existing measurements.
+                completionHandler(measurements)
 
             case .error(let error):
                 print(error)
@@ -39,7 +43,6 @@ class EcgObservationFactory {
         }
 
         // Execute the query.
-        //healthStore.execute(voltageQuery)
-        return observation
+        healthStore.execute(voltageQuery)
     }
 }

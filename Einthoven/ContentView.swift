@@ -41,12 +41,16 @@ struct ContentView: View {
                     let anchor = HKQueryAnchor.init(fromValue: 0)
                    
                     HKSynchronizer().Synchronize(type: ecgType, predicate: nil, anchor: anchor, limit: HKObjectQueryNoLimit) { (success) in
-                        print(success)
+                        if (success) {
+                            print("All records synchronized")
+                        } else {
+                            print("There was an error during synchronization")
+                        }
                     }
                 })
                 
             }) {
-                Text("Transmit ECG observations")
+                Text("Synchronize ECG records")
             }.foregroundColor(.white)
             .padding()
             .background(Color.accentColor)
