@@ -38,11 +38,6 @@ class HKSampleProcessor {
                     self.resources.append(observation)
                     self.processingDispatchGroup.leave()
                 }
-                do {
-                    print(try observation.asJSON())
-                } catch {
-                    print("Something went wrong")
-                }
             }
         }
         
@@ -60,6 +55,13 @@ class HKSampleProcessor {
     private func CreateObservation(measurements: String) -> Observation {
         let observation = EcgObservationTemplateProvider.GetObservationTemplate()
         observation.component?.first?.valueSampledData?.data = FHIRString(measurements)
+        
+        var reference = "Patient/"
+        let referenceValue = UserDefaultsProvider.getValueFromUserDefaults(key: "patientReference")
+        if (referenceValue != nil) {
+            reference += referenceValue!
+        }
+        observation.subject?.reference = FHIRString(reference)
         return observation
     }
     

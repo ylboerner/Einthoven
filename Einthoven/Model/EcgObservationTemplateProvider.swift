@@ -18,7 +18,6 @@ class EcgObservationTemplateProvider {
                   let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                   let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                   if let jsonResult = jsonResult as? FHIRJSON, let observationTemplate = jsonResult["ObservationTemplate"] as? FHIRJSON {
-                    //let observationTemplateAsJson = observationTemplate as? FHIRJSON
                     return observationTemplate
                   }
               } catch {

@@ -13,7 +13,7 @@
 		AFB45CAD26126B8100B4006D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB45CAC26126B8100B4006D /* Preview Assets.xcassets */; };
 		AFB45CB826126B8100B4006D /* EinthovenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45CB726126B8100B4006D /* EinthovenTests.swift */; };
 		AFB45CC326126B8200B4006D /* EinthovenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45CC226126B8200B4006D /* EinthovenUITests.swift */; };
-		AFB45CDC26126C2700B4006D /* HealthKitAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45CDB26126C2700B4006D /* HealthKitAuthorizer.swift */; };
+		AFB45CDC26126C2700B4006D /* HKAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45CDB26126C2700B4006D /* HKAuthorizer.swift */; };
 		AFB45CE126126CB300B4006D /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45CE026126CB300B4006D /* UserDefaultsProvider.swift */; };
 		AFB45CE626126DC700B4006D /* TransactionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB45CE526126DC700B4006D /* TransactionBundle.swift */; };
 		AFB45CEC26126FD400B4006D /* SMART in Frameworks */ = {isa = PBXBuildFile; productRef = AFB45CEB26126FD400B4006D /* SMART */; };
@@ -58,7 +58,7 @@
 		AFB45CBE26126B8200B4006D /* EinthovenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EinthovenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB45CC226126B8200B4006D /* EinthovenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinthovenUITests.swift; sourceTree = "<group>"; };
 		AFB45CC426126B8200B4006D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFB45CDB26126C2700B4006D /* HealthKitAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAuthorizer.swift; sourceTree = "<group>"; };
+		AFB45CDB26126C2700B4006D /* HKAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKAuthorizer.swift; sourceTree = "<group>"; };
 		AFB45CE026126CB300B4006D /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		AFB45CE526126DC700B4006D /* TransactionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBundle.swift; sourceTree = "<group>"; };
 		AFB45CF12612714500B4006D /* FhirClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FhirClient.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		AFB45CDA26126BC700B4006D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AFB45CDB26126C2700B4006D /* HealthKitAuthorizer.swift */,
+				AFB45CDB26126C2700B4006D /* HKAuthorizer.swift */,
 				AFB45CE026126CB300B4006D /* UserDefaultsProvider.swift */,
 				AFB45CF62612717800B4006D /* HKAnchorProvider.swift */,
 				AFB45CFB2612724500B4006D /* HKSampleProcessor.swift */,
@@ -345,7 +345,7 @@
 				AFE09AA6261B66BF005459DD /* HKEcgVoltageProvider.swift in Sources */,
 				AFB45CA826126B7E00B4006D /* ContentView.swift in Sources */,
 				AFB45D01261272B100B4006D /* HKSampleQuery.swift in Sources */,
-				AFB45CDC26126C2700B4006D /* HealthKitAuthorizer.swift in Sources */,
+				AFB45CDC26126C2700B4006D /* HKAuthorizer.swift in Sources */,
 				AFB45CF72612717800B4006D /* HKAnchorProvider.swift in Sources */,
 				AFB45CF22612714500B4006D /* FhirClient.swift in Sources */,
 				AFB45CA626126B7E00B4006D /* EinthovenApp.swift in Sources */,
